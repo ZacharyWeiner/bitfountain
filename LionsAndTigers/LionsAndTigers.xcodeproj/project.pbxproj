@@ -22,6 +22,7 @@
 		14206C981A3D24B000F5E3D4 /* Lioness.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 14206C901A3D24B000F5E3D4 /* Lioness.jpeg */; };
 		14206C991A3D24B000F5E3D4 /* MalayanTiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14206C911A3D24B000F5E3D4 /* MalayanTiger.jpg */; };
 		14206C9A1A3D24B000F5E3D4 /* SiberianTiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14206C921A3D24B000F5E3D4 /* SiberianTiger.jpg */; };
+		14D103201A3DC8DC00FEE6FB /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1031F1A3DC8DC00FEE6FB /* Lion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		14206C901A3D24B000F5E3D4 /* Lioness.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lioness.jpeg; sourceTree = "<group>"; };
 		14206C911A3D24B000F5E3D4 /* MalayanTiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MalayanTiger.jpg; sourceTree = "<group>"; };
 		14206C921A3D24B000F5E3D4 /* SiberianTiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SiberianTiger.jpg; sourceTree = "<group>"; };
+		14D1031F1A3DC8DC00FEE6FB /* Lion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				14206C701A3D1EC800F5E3D4 /* Images.xcassets */,
 				14206C721A3D1EC800F5E3D4 /* LaunchScreen.xib */,
 				14206C671A3D1EC800F5E3D4 /* Supporting Files */,
+				14D1031F1A3DC8DC00FEE6FB /* Lion.swift */,
 			);
 			path = LionsAndTigers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				14206C6C1A3D1EC800F5E3D4 /* ViewController.swift in Sources */,
 				14206C8A1A3D218300F5E3D4 /* Tiger.swift in Sources */,
 				14206C6A1A3D1EC800F5E3D4 /* AppDelegate.swift in Sources */,
+				14D103201A3DC8DC00FEE6FB /* Lion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +447,7 @@
 				14206C851A3D1EC900F5E3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14206C861A3D1EC900F5E3D4 /* Build configuration list for PBXNativeTarget "LionsAndTigersTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +456,7 @@
 				14206C881A3D1EC900F5E3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
