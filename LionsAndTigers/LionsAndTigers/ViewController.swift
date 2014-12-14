@@ -60,6 +60,7 @@ class ViewController: UIViewController {
                 self.ageLabel.text = "\(tiger.age)"
                 self.breedLabel.text = tiger.breed
                 self.myImageView.image = tiger.image!
+                tiger.chuffNumberOfTimes(tiger.age)
             },
             completion: {
                 (finished: Bool) -> () in
