@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                 dogYears = humanYears * 10.5;
             }else{
                 dogYears = 2 * 10.5;
-                dogYears += ((humanYears-2) * Double(7))
+                dogYears += ((humanYears-2) * Double(4))
             }
               convertedLabel.text = "Dog Years:" + "\(dogYears)"
         }
