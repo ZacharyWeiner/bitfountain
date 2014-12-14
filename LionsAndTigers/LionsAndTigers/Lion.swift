@@ -34,3 +34,19 @@ class Lion {
         return randomFact
     }
 }
+
+
+//Lion is the superclass of LionCub
+//LionCub is the subclass of Lion
+class LionCub: Lion {
+    func RubLionCubBelly() {
+        println("LionCub: snuggle and be happy")
+    }
+    
+    override func roar() {
+        println("Lion: Squeek Squeek...")
+        if isAlphaMale {
+            super.roar()
+        }
+    }
+}

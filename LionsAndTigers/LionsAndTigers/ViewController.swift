@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         
         lions.append(self.createLion(2, name: "Mufasa", subSpecies: "Lion", image: UIImage(named: "Lion.jpg")!, isAlpha: true))
         lions.append(self.createLion(2, name: "Jane", subSpecies: "Lion", image: UIImage(named: "Lioness.jpeg")!, isAlpha: true))
-        lions.append(self.createLion(6, name: "Im Lyin", subSpecies: "Lion", image: UIImage(named: "Lion.jpg")!, isAlpha:false))
-        lions.append(self.createLion(4, name: "Cubby Hole", subSpecies: "Lion Cub", image: UIImage(named: "LionCub1.jpg")!, isAlpha:false))
+        lions.append(self.createLionCub("Im Lyin", subSpecies: "Lion", image: UIImage(named: "LionCub2.jpeg")!, isAlpha:false))
+        lions.append(self.createLionCub("Cubby Hole", subSpecies: "Lion Cub", image: UIImage(named: "LionCub1.jpg")!, isAlpha:false))
         
         lions[3].changeToAlphaMale()
         println("isAlpha: \(lions[3].isAlphaMale)")
@@ -67,6 +67,15 @@ class ViewController: UIViewController {
         return myLion
     }
     
+    func createLionCub(name:NSString, subSpecies:NSString , image:UIImage, isAlpha:Bool) -> Lion{
+        var myLion = LionCub()
+        myLion.name = name
+        myLion.age = 1
+        myLion.subSpecies = subSpecies
+        myLion.image = image
+        return myLion
+    }
+    
     func setUIProperties(){
         UIView.transitionWithView(self.view, duration: 1, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
                 if(self.currentAnimal.species == "Tiger"){
@@ -87,6 +96,9 @@ class ViewController: UIViewController {
                     var isLoud = (self.selectedTiger > 3)
                     lion.roar()
                     println(lion.randomFact())
+                    if lion is LionCub {
+                        (lion as LionCub).RubLionCubBelly()
+                    }
                 }
             },
             completion: {
