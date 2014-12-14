@@ -34,6 +34,12 @@ class ViewController: UIViewController {
     var bet_MaxButton:UIButton!
     var spinButton:UIButton!
     
+    
+    var slots:[[Slot]] = []
+    var credits = 0
+    var currentBet = 0
+    var winnings = 0
+    
     let kMarginForView:CGFloat = 10.0
     let kMarginForSlot:CGFloat = 2.0
     let kSixth:CGFloat = 1.0 / 6.0
@@ -46,6 +52,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpContainerViews()
+        hardReset()
     }
 
     func setUpContainerViews(){
@@ -94,6 +101,16 @@ class ViewController: UIViewController {
         for var containerNumber = 0; containerNumber < kNumberOfContainers; containerNumber++ {
             for var slotNumber = 0; slotNumber < kNumberOfSlots; slotNumber++ {
                 var slotImageView = UIImageView()
+                
+                var slot:Slot
+                if slots.count != 0 {
+                    let slotContainer = slots[containerNumber]
+                    slot = slotContainer[slotNumber]
+                    slotImageView.image = slot.image
+                }
+                else{
+                    slot = Slot()
+                }
                 slotImageView.backgroundColor = UIColor.yellowColor()
                 slotImageView.frame = CGRect(
                     x: containerView.bounds.origin.x + (containerView.bounds.size.width * CGFloat(containerNumber) * kThird),
@@ -220,7 +237,7 @@ class ViewController: UIViewController {
         containerView.addSubview(self.bet_MaxButton)
         
         self.spinButton = UIButton()
-        self.spinButton.setTitle("Bet Max", forState: UIControlState.Normal)
+        self.spinButton.setTitle("Spin", forState: UIControlState.Normal)
         self.spinButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.spinButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
         self.spinButton.backgroundColor = UIColor.lightGrayColor()
@@ -233,11 +250,11 @@ class ViewController: UIViewController {
     }
     
     func resetButtonPressed(button:UIButton){
-        println("reset button pressed")
+        self.hardReset()
     }
     
     func bet_1ButtonPressed(button:UIButton){
-        println("Bet 1 button pressed")
+        self.currentBet = 1
     }
     
     func bet_MaxButtonPressed(button:UIButton){
@@ -245,12 +262,45 @@ class ViewController: UIViewController {
     }
     
     func spinButtonPressed(button:UIButton){
-        println("Spin button pressed")
+        self.slots = Factory.CreateSlots()
+        self.removeSlotImageViews()
+        self.setUpcardContainer(self.cardContainer)
     }
 
+    func removeSlotImageViews(){
+        if self.cardContainer != nil {
+            let container : UIView = self.cardContainer!
+            let subviews:Array?  = container.subviews
+            for view in subviews! {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    func hardReset(){
+        self.removeSlotImageViews()
+        self.slots.removeAll(keepCapacity: true)
+        self.credits = 50
+        self.winnings = 0
+        self.currentBet = 0
+        self.setUpcardContainer(self.cardContainer)
+    }
+    
+    func updateMainView(){
+        self.creditsLabel.text = "\(self.credits)"
+        self.betLabel.text = "\(self.currentBet)"
+        self.winnerPaidLabel.text = "\(self.winnings)"
+    }
+    
+    func showAlertWithText(header:String = "Warning", message: String){
+        var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
