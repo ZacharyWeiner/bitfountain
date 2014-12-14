@@ -24,4 +24,28 @@ struct Tiger{
             self.chuff()
         }
     }
+    
+    func chuffNumberOfTimes(numberOfTimes:Int, isLoud:Bool){
+        for var chuff = 1; chuff <= numberOfTimes; chuff++ {
+            if(isLoud){
+                self.chuff()
+            }else{
+                println("Tiger: Purr Purr...")
+            }
+        }
+    }
+    
+    func randomFact() -> NSString {
+        var randomFact:String
+        let randomNumber = Int(arc4random_uniform(UInt32(3)))
+        if(randomNumber == 0){
+            randomFact = "The tiger is the biggest of the cat family"
+        
+        } else if(randomNumber == 1){
+            randomFact = " Tigers can reach a length of 3.3 meters"
+        } else{
+            randomFact = " a group of tigers is also known as an 'ambush'"
+        }
+        return randomFact
+    }
 }

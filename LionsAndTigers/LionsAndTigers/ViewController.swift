@@ -60,7 +60,9 @@ class ViewController: UIViewController {
                 self.ageLabel.text = "\(tiger.age)"
                 self.breedLabel.text = tiger.breed
                 self.myImageView.image = tiger.image!
-                tiger.chuffNumberOfTimes(tiger.age)
+                var isLoud = (self.selectedTiger > 3)
+                tiger.chuffNumberOfTimes(tiger.age, isLoud: isLoud)
+                println(tiger.randomFact())
             },
             completion: {
                 (finished: Bool) -> () in
