@@ -32,3 +32,15 @@ for var bottlesRemaining = 99; bottlesRemaining >= 0; bottlesRemaining-- {
         println("There are \(bottlesRemaining) bottles remaining")
     }
 }
+
+
+for x in 1...5{
+    println("\(x)")
+}
+
+
+var tigerNames:[NSString] = ["Tigger", "Saber", "Thor", "Tiny"]
+
+for (index, tigerName) in enumerate(tigerNames){
+    println("index: \(index) tigerName: \(tigerName)")
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LionsAndTigers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-9R-dpq">
+                                <rect key="frame" x="0.0" y="-8" width="600" height="564"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C36-z5-h5u">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="cnJ-7L-50l"/>
+                                    <barButtonItem title="Next" id="OZP-ra-7yY">
+                                        <connections>
+                                            <action selector="nextClicked:" destination="BYZ-38-t0r" id="XEn-Rh-KpT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Bv-wZv">
+                                <rect key="frame" x="16" y="489" width="224" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nlh-NN-1Sc"/>
+                                    <constraint firstAttribute="width" constant="224" id="O7Q-Wh-OTQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F74-wv-ySF">
+                                <rect key="frame" x="16" y="518" width="224" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wpb-Fw-YIO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwH-JL-bSq">
+                                <rect key="frame" x="16" y="460" width="215" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="bv0-H2-SHr"/>
+                                    <constraint firstAttribute="height" constant="21" id="vXX-dD-X3l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="trailing" secondItem="4WB-9R-dpq" secondAttribute="trailing" id="40C-td-DtU"/>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="top" secondItem="F74-wv-ySF" secondAttribute="bottom" constant="17" id="66A-ui-LTh"/>
+                            <constraint firstItem="IwH-JL-bSq" firstAttribute="leading" secondItem="Em9-Bv-wZv" secondAttribute="leading" id="9di-45-tEB"/>
+                            <constraint firstItem="F74-wv-ySF" firstAttribute="trailing" secondItem="Em9-Bv-wZv" secondAttribute="trailing" id="ABP-TK-vQu"/>
+                            <constraint firstItem="F74-wv-ySF" firstAttribute="top" secondItem="Em9-Bv-wZv" secondAttribute="bottom" constant="8" symbolic="YES" id="Jcb-9c-AEB"/>
+                            <constraint firstAttribute="trailing" secondItem="C36-z5-h5u" secondAttribute="trailing" id="Pce-ca-ccJ"/>
+                            <constraint firstItem="4WB-9R-dpq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-8" id="WiC-eh-EhA"/>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ZVz-du-IHh"/>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="top" secondItem="4WB-9R-dpq" secondAttribute="bottom" id="a1f-Pc-qAG"/>
+                            <constraint firstItem="Em9-Bv-wZv" firstAttribute="top" secondItem="IwH-JL-bSq" secondAttribute="bottom" constant="8" symbolic="YES" id="fI5-J1-n46"/>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="leading" secondItem="4WB-9R-dpq" secondAttribute="leading" id="m3c-or-3fC"/>
+                            <constraint firstItem="C36-z5-h5u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q9j-WD-1vk"/>
+                            <constraint firstItem="Em9-Bv-wZv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sTu-uA-ZZH"/>
+                            <constraint firstItem="F74-wv-ySF" firstAttribute="leading" secondItem="Em9-Bv-wZv" secondAttribute="leading" id="thT-jI-OBJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="Em9-Bv-wZv" id="qZI-Le-SS4"/>
+                        <outlet property="breedLabel" destination="F74-wv-ySF" id="1to-yW-NQP"/>
+                        <outlet property="myImageView" destination="4WB-9R-dpq" id="4QX-TG-isu"/>
+                        <outlet property="nameLabel" destination="IwH-JL-bSq" id="UbC-ax-Tcf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
