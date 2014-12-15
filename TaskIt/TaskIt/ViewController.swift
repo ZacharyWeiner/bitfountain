@@ -55,6 +55,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegueWithIdentifier("showTaskDetail", sender: self)
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "ToDo"
+        }else{
+            return "Completed"
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0{
+            let thisTask:TaskModel = baseArray[indexPath.section][indexPath.row] as TaskModel
+            var newTask = TaskModel(Task: thisTask.Task, SubTask: thisTask.SubTask, Date: thisTask.Date, Completed: !thisTask.Completed)
+            
+            baseArray[indexPath.section].removeAtIndex(indexPath.row)
+            baseArray[1].append(newTask)
+        }else{
+            let thisTask:TaskModel = baseArray[indexPath.section][indexPath.row] as TaskModel
+            var newTask = TaskModel(Task: thisTask.Task, SubTask: thisTask.SubTask, Date: thisTask.Date, Completed: !thisTask.Completed)
+            
+            baseArray[indexPath.section].removeAtIndex(indexPath.row)
+            baseArray[0].append(newTask)
+        }
+        tableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTaskDetail" {
             let detailVC: TaskDetailViewController = (segue.destinationViewController as TaskDetailViewController)
