@@ -110,7 +110,11 @@
                         <barButtonItem title="Item" id="KCb-w8-dhd"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Xg3-Ru-xBD">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="byc-9a-76O"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="byc-9a-76O">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Qt5-3e-Gm0" id="J0r-hl-imi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="86T-w5-8RA">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="Qt5-3e-Gm0" id="BF0-N8-woR"/>

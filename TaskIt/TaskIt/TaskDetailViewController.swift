@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class TaskDetailViewController: UIViewController {
 
     @IBOutlet weak var taskTextField: UITextField!
@@ -15,19 +14,25 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     var taskDetail:TaskModel!
-    var mainVC:ViewController! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.taskTextField.text = taskDetail.Task
-        self.subTaskTextField.text = taskDetail.SubTask
+        self.taskTextField.text = taskDetail.task
+        self.subTaskTextField.text = taskDetail.subTask
         let compareDate = Date.from(year: 2014, month: 1, day: 1)
-        self.dueDatePicker.setDate(taskDetail.Date, animated: true)
+        self.dueDatePicker.setDate(taskDetail.date, animated: true)
     }
 
     @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
-        var task:TaskModel = TaskModel(Task: taskTextField.text, SubTask: subTaskTextField.text, Date: dueDatePicker.date, Completed: false)
-        mainVC.baseArray[0][mainVC.tableView.indexPathForSelectedRow()!.row] = task
+        taskDetail.task = taskTextField.text
+        taskDetail.subTask = subTaskTextField.text
+        taskDetail.date = dueDatePicker.date
+        taskDetail.completed = false
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func cancelButtonTapped(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
