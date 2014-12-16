@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14384DCE1A3FB0A70086E881 /* feedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14384DCD1A3FB0A70086E881 /* feedViewCell.swift */; };
+		14384DD01A3FB2120086E881 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14384DCF1A3FB2120086E881 /* MobileCoreServices.framework */; };
 		14840A781A3F88D600A3FC3B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB36361A3F864B009F7C43 /* FeedViewController.swift */; };
 		14AB36141A3F862F009F7C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB36131A3F862F009F7C43 /* AppDelegate.swift */; };
 		14AB36171A3F862F009F7C43 /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14AB36151A3F862F009F7C43 /* ExchangeAGram.xcdatamodeld */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14384DCD1A3FB0A70086E881 /* feedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feedViewCell.swift; sourceTree = "<group>"; };
+		14384DCF1A3FB2120086E881 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		14AB360E1A3F862F009F7C43 /* ExchangeAGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeAGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AB36121A3F862F009F7C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AB36131A3F862F009F7C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14384DD01A3FB2120086E881 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		14AB36051A3F862F009F7C43 = {
 			isa = PBXGroup;
 			children = (
+				14384DCF1A3FB2120086E881 /* MobileCoreServices.framework */,
 				14AB36101A3F862F009F7C43 /* ExchangeAGram */,
 				14AB36291A3F862F009F7C43 /* ExchangeAGramTests */,
 				14AB360F1A3F862F009F7C43 /* Products */,
@@ -84,6 +90,7 @@
 				14AB36131A3F862F009F7C43 /* AppDelegate.swift */,
 				14AB36181A3F862F009F7C43 /* ViewController.swift */,
 				14AB36361A3F864B009F7C43 /* FeedViewController.swift */,
+				14384DCD1A3FB0A70086E881 /* feedViewCell.swift */,
 				14AB361A1A3F862F009F7C43 /* Main.storyboard */,
 				14AB361D1A3F862F009F7C43 /* Images.xcassets */,
 				14AB361F1A3F862F009F7C43 /* LaunchScreen.xib */,
@@ -221,6 +228,7 @@
 				14840A781A3F88D600A3FC3B /* FeedViewController.swift in Sources */,
 				14AB36191A3F862F009F7C43 /* ViewController.swift in Sources */,
 				14AB36141A3F862F009F7C43 /* AppDelegate.swift in Sources */,
+				14384DCE1A3FB0A70086E881 /* feedViewCell.swift in Sources */,
 				14AB36171A3F862F009F7C43 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
