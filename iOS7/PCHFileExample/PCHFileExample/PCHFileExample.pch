@@ -1,0 +1,18 @@
+//
+//  PCHFileExample.pch
+//  PCHFileExample
+//
+//  Created by Zachary Weiner on 12/16/14.
+//  Copyright (c) 2014 zachary.weiner. All rights reserved.
+//
+
+#ifndef PCHFileExample_PCHFileExample_pch
+#define PCHFileExample_PCHFileExample_pch
+
+
+#endif
+
+
+#import <Availability.h>
+#define username @"username"
+#define password @"password"

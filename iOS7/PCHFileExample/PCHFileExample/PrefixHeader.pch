@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  PCHFileExample
+//
+//  Created by Zachary Weiner on 12/16/14.
+//  Copyright (c) 2014 zachary.weiner. All rights reserved.
+//
+
+#ifndef PCHFileExample_PrefixHeader_pch
+#define PCHFileExample_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#endif
+
+
+
+#define username = @"username"
+#define password = @"password"
