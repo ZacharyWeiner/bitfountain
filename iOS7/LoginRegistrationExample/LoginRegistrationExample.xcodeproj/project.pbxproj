@@ -15,6 +15,8 @@
 		1488B6251A40950D004294FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1488B6241A40950D004294FE /* Images.xcassets */; };
 		1488B6281A40950D004294FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1488B6261A40950D004294FE /* LaunchScreen.xib */; };
 		1488B6341A40950D004294FE /* LoginRegistrationExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488B6331A40950D004294FE /* LoginRegistrationExampleTests.m */; };
+		1488B63F1A40A063004294FE /* LRESignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488B63E1A40A063004294FE /* LRESignInViewController.m */; };
+		1488B6421A40A077004294FE /* LRECreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488B6411A40A077004294FE /* LRECreateAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		1488B62D1A40950D004294FE /* LoginRegistrationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginRegistrationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1488B6321A40950D004294FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1488B6331A40950D004294FE /* LoginRegistrationExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegistrationExampleTests.m; sourceTree = "<group>"; };
+		1488B63D1A40A063004294FE /* LRESignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRESignInViewController.h; sourceTree = "<group>"; };
+		1488B63E1A40A063004294FE /* LRESignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRESignInViewController.m; sourceTree = "<group>"; };
+		1488B6401A40A077004294FE /* LRECreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRECreateAccountViewController.h; sourceTree = "<group>"; };
+		1488B6411A40A077004294FE /* LRECreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRECreateAccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				1488B61E1A40950D004294FE /* ViewController.h */,
 				1488B61F1A40950D004294FE /* ViewController.m */,
 				1488B6211A40950D004294FE /* Main.storyboard */,
+				1488B63D1A40A063004294FE /* LRESignInViewController.h */,
+				1488B63E1A40A063004294FE /* LRESignInViewController.m */,
+				1488B6401A40A077004294FE /* LRECreateAccountViewController.h */,
+				1488B6411A40A077004294FE /* LRECreateAccountViewController.m */,
 				1488B6241A40950D004294FE /* Images.xcassets */,
 				1488B6261A40950D004294FE /* LaunchScreen.xib */,
 				1488B61B1A40950D004294FE /* LoginRegistrationExample.xcdatamodeld */,
@@ -224,6 +234,8 @@
 			files = (
 				1488B61A1A40950D004294FE /* AppDelegate.m in Sources */,
 				1488B6171A40950D004294FE /* main.m in Sources */,
+				1488B6421A40A077004294FE /* LRECreateAccountViewController.m in Sources */,
+				1488B63F1A40A063004294FE /* LRESignInViewController.m in Sources */,
 				1488B6201A40950D004294FE /* ViewController.m in Sources */,
 				1488B61D1A40950D004294FE /* LoginRegistrationExample.xcdatamodeld in Sources */,
 			);
