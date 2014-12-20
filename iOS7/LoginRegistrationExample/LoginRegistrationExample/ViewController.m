@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "LRECreateAccountViewController.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.usernameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:USER_NAME];
+    self.passwordLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:PASSWORD];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
