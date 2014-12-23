@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		149C87A81A49A8E4008EED46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149C87A71A49A8E4008EED46 /* ViewController.m */; };
+		149C87AC1A49B9A8008EED46 /* Main.iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149C87AB1A49B9A8008EED46 /* Main.iPad.storyboard */; };
+		149C87AF1A49BCB7008EED46 /* RTMountainPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 149C87AE1A49BCB7008EED46 /* RTMountainPath.m */; };
+		149C87B21A49BEAA008EED46 /* RTPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149C87B11A49BEAA008EED46 /* RTPathView.m */; };
 		14D7E4411A48B83400FDBA04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D7E4401A48B83400FDBA04 /* main.m */; };
 		14D7E4441A48B83400FDBA04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D7E4431A48B83400FDBA04 /* AppDelegate.m */; };
-		14D7E44A1A48B83400FDBA04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D7E4481A48B83400FDBA04 /* Main.storyboard */; };
+		14D7E44A1A48B83400FDBA04 /* Main.iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D7E4481A48B83400FDBA04 /* Main.iPhone.storyboard */; };
 		14D7E44C1A48B83400FDBA04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D7E44B1A48B83400FDBA04 /* Images.xcassets */; };
 		14D7E44F1A48B83400FDBA04 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D7E44D1A48B83400FDBA04 /* LaunchScreen.xib */; };
 		14D7E45B1A48B83400FDBA04 /* RaceToTheTopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D7E45A1A48B83400FDBA04 /* RaceToTheTopTests.m */; };
@@ -30,12 +33,17 @@
 /* Begin PBXFileReference section */
 		149C87A61A49A8E4008EED46 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		149C87A71A49A8E4008EED46 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		149C87AB1A49B9A8008EED46 /* Main.iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.iPad.storyboard; sourceTree = "<group>"; };
+		149C87AD1A49BCB7008EED46 /* RTMountainPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMountainPath.h; sourceTree = "<group>"; };
+		149C87AE1A49BCB7008EED46 /* RTMountainPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMountainPath.m; sourceTree = "<group>"; };
+		149C87B01A49BEAA008EED46 /* RTPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPathView.h; sourceTree = "<group>"; };
+		149C87B11A49BEAA008EED46 /* RTPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPathView.m; sourceTree = "<group>"; };
 		14D7E43B1A48B83400FDBA04 /* RaceToTheTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceToTheTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D7E43F1A48B83400FDBA04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D7E4401A48B83400FDBA04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14D7E4421A48B83400FDBA04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14D7E4431A48B83400FDBA04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14D7E4491A48B83400FDBA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14D7E4491A48B83400FDBA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.iPhone.storyboard; sourceTree = "<group>"; };
 		14D7E44B1A48B83400FDBA04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14D7E44E1A48B83400FDBA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		14D7E4541A48B83400FDBA04 /* RaceToTheTopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceToTheTopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,13 +94,16 @@
 			children = (
 				14D7E4641A48B86B00FDBA04 /* RTSpaceShipView.h */,
 				14D7E4651A48B86B00FDBA04 /* RTSpaceShipView.m */,
-				14D7E4481A48B83400FDBA04 /* Main.storyboard */,
+				14D7E4481A48B83400FDBA04 /* Main.iPhone.storyboard */,
+				149C87AB1A49B9A8008EED46 /* Main.iPad.storyboard */,
 				149C87A61A49A8E4008EED46 /* ViewController.h */,
 				149C87A71A49A8E4008EED46 /* ViewController.m */,
 				14D7E44B1A48B83400FDBA04 /* Images.xcassets */,
 				14D7E44D1A48B83400FDBA04 /* LaunchScreen.xib */,
 				14D7E43E1A48B83400FDBA04 /* Supporting Files */,
 				14D7E4671A48B87C00FDBA04 /* Views */,
+				149C87AD1A49BCB7008EED46 /* RTMountainPath.h */,
+				149C87AE1A49BCB7008EED46 /* RTMountainPath.m */,
 			);
 			path = RaceToTheTop;
 			sourceTree = "<group>";
@@ -128,6 +139,8 @@
 		14D7E4671A48B87C00FDBA04 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				149C87B01A49BEAA008EED46 /* RTPathView.h */,
+				149C87B11A49BEAA008EED46 /* RTPathView.m */,
 			);
 			name = Views;
 			path = ..;
@@ -213,7 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D7E44A1A48B83400FDBA04 /* Main.storyboard in Resources */,
+				149C87AC1A49B9A8008EED46 /* Main.iPad.storyboard in Resources */,
+				14D7E44A1A48B83400FDBA04 /* Main.iPhone.storyboard in Resources */,
 				14D7E44F1A48B83400FDBA04 /* LaunchScreen.xib in Resources */,
 				14D7E44C1A48B83400FDBA04 /* Images.xcassets in Resources */,
 			);
@@ -234,7 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14D7E4661A48B86B00FDBA04 /* RTSpaceShipView.m in Sources */,
+				149C87AF1A49BCB7008EED46 /* RTMountainPath.m in Sources */,
 				14D7E4441A48B83400FDBA04 /* AppDelegate.m in Sources */,
+				149C87B21A49BEAA008EED46 /* RTPathView.m in Sources */,
 				149C87A81A49A8E4008EED46 /* ViewController.m in Sources */,
 				14D7E4411A48B83400FDBA04 /* main.m in Sources */,
 			);
@@ -259,12 +275,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14D7E4481A48B83400FDBA04 /* Main.storyboard */ = {
+		14D7E4481A48B83400FDBA04 /* Main.iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				14D7E4491A48B83400FDBA04 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main.iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		14D7E44D1A48B83400FDBA04 /* LaunchScreen.xib */ = {
@@ -365,6 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -376,6 +393,7 @@
 				INFOPLIST_FILE = RaceToTheTop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
