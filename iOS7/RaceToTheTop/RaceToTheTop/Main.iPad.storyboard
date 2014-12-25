@@ -24,9 +24,28 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-Z5-EV7" userLabel="PathView" customClass="RTPathView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz8-V9-fOx">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="390" y="17" width="334" height="84"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Fz8-V9-fOx"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="16" y="20" width="768" height="772"/>
+                                    <mask key="subviews">
+                                        <include reference="Fz8-V9-fOx"/>
+                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
@@ -46,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="pathView" destination="gbH-Z5-EV7" id="Ump-a6-UiM"/>
+                        <outlet property="scoreLabel" destination="Fz8-V9-fOx" id="Pxs-rV-DNM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGB-k1-MOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
