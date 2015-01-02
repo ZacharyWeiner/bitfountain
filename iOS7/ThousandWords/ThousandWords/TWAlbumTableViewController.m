@@ -28,6 +28,21 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Album"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    id delegate  = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = [delegate managedObjectContext];
+    NSError *error = nil;
+    
+    NSArray *fetchedAlbums = [moc executeFetchRequest:fetchRequest error:&error];
+    self.albums = [fetchedAlbums mutableCopy];
+    [self.tableView reloadData];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -67,7 +82,7 @@
     if(buttonIndex == 1){
         NSString *alertText = [alertView textFieldAtIndex:0].text;
         NSLog(@"My input from textbox was: %@", alertText);
-        Album *newAlbum = [self addAlbumWithName:alertText];
+        [self addAlbumWithName:alertText];
     }else if (buttonIndex ==0){
         [alertView removeFromSuperview];
     }
