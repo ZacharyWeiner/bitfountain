@@ -1,5 +1,5 @@
 //
-//  TWCoreDataHelper.h
+//  TWPictureDataTransformer.h
 //  ThousandWords
 //
 //  Created by Zachary Weiner on 1/2/15.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-@interface TWCoreDataHelper : NSObject
-+(NSManagedObjectContext *) managedObjectContext;
+#import <UIKit/UIKit.h>
+@interface TWPictureDataTransformer : NSValueTransformer
+
 @end

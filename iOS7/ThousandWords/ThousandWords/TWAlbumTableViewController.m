@@ -8,6 +8,7 @@
 
 #import "TWAlbumTableViewController.h"
 #import "Album.h"
+#import "TWCoreDataHelper.h"
 @interface TWAlbumTableViewController ()
 
 @end
@@ -33,8 +34,7 @@
     [super viewWillAppear:animated];
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Album"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
-    id delegate  = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *moc = [delegate managedObjectContext];
+    NSManagedObjectContext *moc = [TWCoreDataHelper managedObjectContext];
     NSError *error = nil;
     
     NSArray *fetchedAlbums = [moc executeFetchRequest:fetchRequest error:&error];
@@ -50,8 +50,7 @@
 
 #pragma mark -Helpers
 - (Album *)addAlbumWithName:(NSString *)name{
-    id delegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSManagedObjectContext *context = [TWCoreDataHelper managedObjectContext];
     
     Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
     album.name = name;

@@ -1,5 +1,5 @@
 //
-//  TWCoreDataHelper.h
+//  Photo.h
 //  ThousandWords
 //
 //  Created by Zachary Weiner on 1/2/15.
@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-@interface TWCoreDataHelper : NSObject
-+(NSManagedObjectContext *) managedObjectContext;
+
+@class Album;
+
+@interface Photo : NSManagedObject
+
+@property (nonatomic, retain) id image;
+@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) Album *albumBook;
 @end
