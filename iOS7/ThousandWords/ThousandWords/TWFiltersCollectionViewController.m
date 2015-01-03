@@ -30,6 +30,7 @@ static NSString * const reuseIdentifier = @"photo cell";
     [self.collectionView registerClass:[TWPhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     self.filters = [[[self class] photoFilters] mutableCopy];
     //[[NSMutableArray alloc] initWithArray:[TWFiltersCollectionViewController photoFilters]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,14 +38,14 @@ static NSString * const reuseIdentifier = @"photo cell";
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 + (NSArray *)photoFilters;
 {
@@ -75,8 +76,11 @@ static NSString * const reuseIdentifier = @"photo cell";
     CGImageRef cgImage = [self.context createCGImage:filteredImage fromRect:extent];
     UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
     
+    NSLog(@"%@", UIImagePNGRepresentation(finalImage));
     return finalImage;
 }
+
+
 
 
 
@@ -93,9 +97,17 @@ static NSString * const reuseIdentifier = @"photo cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TWPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+    
+    dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
+    dispatch_async(filterQueue, ^{
+        UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            cell.imageView.image = filterImage;
+        });
+    });
+    
     return cell;
 }
 
@@ -104,42 +116,44 @@ static NSString * const reuseIdentifier = @"photo cell";
     TWPhotoCollectionViewCell *cell = (TWPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     self.photo.image = cell.imageView.image;
     
-    NSError *error = nil;
-    if(![[self.photo managedObjectContext] save:&error]){
-        NSLog(@"error saving with filter: %@", error);
+    if(self.photo.image){
+        NSError *error = nil;
+        if(![[self.photo managedObjectContext] save:&error]){
+            NSLog(@"error saving with filter: %@", error);
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark <UICollectionViewDelegate>
 
 /*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+ // Uncomment this method to specify if the specified item should be highlighted during tracking
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
-}
-*/
+ }
+ */
 
 /*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
+ // Uncomment this method to specify if the specified item should be selected
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ */
 
 /*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+ // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ }
+ 
+ - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ }
+ 
+ - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 	
-}
-*/
+ }
+ */
 
 @end
