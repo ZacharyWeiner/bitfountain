@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Album.h"
 @interface TWPhotosCollectionViewController : UICollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (strong, nonatomic) Album *album;
+
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender;
 
 @end

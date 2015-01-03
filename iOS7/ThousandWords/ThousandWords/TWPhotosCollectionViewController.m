@@ -8,6 +8,9 @@
 
 #import "TWPhotosCollectionViewController.h"
 #import "TWPhotoCollectionViewCell.h"
+#import "Photo.h"
+#import "TWPictureDataTransformer.h"
+#import "TWCoreDataHelper.h"
 
 @interface TWPhotosCollectionViewController ()
 @property(strong, nonatomic) NSMutableArray *photos;
@@ -31,6 +34,19 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     [self.collectionView registerClass:[TWPhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    id delegate  = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = [delegate managedObjectContext];
+    NSError *error = nil;
+    
+    NSArray *fetchedAlbums = [moc executeFetchRequest:fetchRequest error:&error];
+    self.photos = [fetchedAlbums mutableCopy];
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +76,22 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
 }
 */
 
+#pragma mark - Helper
+- (Photo *)photoFromImage:(UIImage *)image
+{
+    Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:[TWCoreDataHelper managedObjectContext]];
+    photo.image = image;
+    photo.date = [NSDate date];
+    photo.albumBook = self.album;
+    
+    NSError *error = nil;
+    if(![[photo managedObjectContext] save:&error]){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Erro!" delegate:nil cancelButtonTitle:@"Cacel" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    return photo;
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -74,7 +106,8 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TWPhotoCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.imageView.image = self.photos[indexPath.row];
+    Photo *photo = self.photos[indexPath.row];
+    cell.imageView.image = photo.image;
     cell.backgroundColor = [UIColor whiteColor];
     
     return cell;
@@ -119,7 +152,7 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     if(!image){
         image = info[UIImagePickerControllerOriginalImage];
     }
-    [self.photos addObject:image];
+    [self.photos addObject:[self photoFromImage:image]];
     [self.collectionView reloadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }
