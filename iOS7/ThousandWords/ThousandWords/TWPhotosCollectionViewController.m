@@ -83,7 +83,6 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
             NSArray *paths = [((TWPhotosCollectionViewController *)sender).collectionView indexPathsForSelectedItems];
             NSIndexPath *path = paths.firstObject;
             long r = path.row;
-            NSString *s = [NSString stringWithFormat:@"%lu", r];
             Photo *selectedPhoto = self.photos[path.row];
             detailVC.photo = selectedPhoto;
             
@@ -128,7 +127,7 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //[self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
     [self performSegueWithIdentifier:@"photo details" sender:self];

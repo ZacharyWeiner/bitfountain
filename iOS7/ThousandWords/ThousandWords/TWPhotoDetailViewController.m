@@ -8,6 +8,7 @@
 
 #import "TWPhotoDetailViewController.h"
 #import "Photo.h"
+#import "TWFiltersCollectionViewController.h"
 
 @interface TWPhotoDetailViewController ()
 - (IBAction)addFilterPressed:(UIButton *)sender;
@@ -35,15 +36,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"filters segue"]){
+        if([segue.destinationViewController isKindOfClass:[TWFiltersCollectionViewController class]]){
+            TWFiltersCollectionViewController *destinationVC = segue.destinationViewController;
+            destinationVC.photo = self.photo;
+        }
+    }
 }
-*/
+
 
 - (IBAction)addFilterPressed:(id)sender {
 }
