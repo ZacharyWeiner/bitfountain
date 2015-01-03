@@ -22,6 +22,7 @@
 		14F27DCD1A575B1500849E39 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F27DCC1A575B1500849E39 /* Album.m */; };
 		14F27DD01A575B1600849E39 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F27DCF1A575B1600849E39 /* Photo.m */; };
 		14F27DD41A575C1900849E39 /* TWPictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F27DD31A575C1900849E39 /* TWPictureDataTransformer.m */; };
+		14F27DD71A578AF200849E39 /* TWPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F27DD61A578AF200849E39 /* TWPhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		14F27DCF1A575B1600849E39 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		14F27DD21A575C1900849E39 /* TWPictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPictureDataTransformer.h; sourceTree = "<group>"; };
 		14F27DD31A575C1900849E39 /* TWPictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPictureDataTransformer.m; sourceTree = "<group>"; };
+		14F27DD51A578AF200849E39 /* TWPhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPhotoDetailViewController.h; sourceTree = "<group>"; };
+		14F27DD61A578AF200849E39 /* TWPhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				147383D11A57369600085349 /* TWPhotoCollectionViewCell.m */,
 				147383CD1A5734B700085349 /* TWPhotosCollectionViewController.h */,
 				147383CE1A5734B700085349 /* TWPhotosCollectionViewController.m */,
+				14F27DD51A578AF200849E39 /* TWPhotoDetailViewController.h */,
+				14F27DD61A578AF200849E39 /* TWPhotoDetailViewController.m */,
 				149C87EF1A4CA3EB008EED46 /* TWAlbumTableViewController.h */,
 				149C87F01A4CA3EB008EED46 /* TWAlbumTableViewController.m */,
 				149C87D61A4CA1D7008EED46 /* Images.xcassets */,
@@ -268,6 +273,7 @@
 				147383CF1A5734B700085349 /* TWPhotosCollectionViewController.m in Sources */,
 				149C87CF1A4CA1D7008EED46 /* ThousandWords.xcdatamodeld in Sources */,
 				149C87CC1A4CA1D7008EED46 /* AppDelegate.m in Sources */,
+				14F27DD71A578AF200849E39 /* TWPhotoDetailViewController.m in Sources */,
 				14F27DCD1A575B1500849E39 /* Album.m in Sources */,
 				147383CC1A5731A200085349 /* TWCoreDataHelper.m in Sources */,
 				149C87F11A4CA3EB008EED46 /* TWAlbumTableViewController.m in Sources */,

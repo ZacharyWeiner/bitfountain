@@ -11,6 +11,7 @@
 #import "Photo.h"
 #import "TWPictureDataTransformer.h"
 #import "TWCoreDataHelper.h"
+#import "TWPhotoDetailViewController.h"
 
 @interface TWPhotosCollectionViewController ()
 @property(strong, nonatomic) NSMutableArray *photos;
@@ -38,6 +39,7 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
 //    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
 //    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
 //    id delegate  = [[UIApplication sharedApplication] delegate];
@@ -73,10 +75,21 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
 }
 
 
-//#pragma mark - Navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//   
-//}
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"photo details"]) {
+        if([segue.destinationViewController isKindOfClass:[TWPhotoDetailViewController class]]){
+            TWPhotoDetailViewController *detailVC = segue.destinationViewController;
+            NSArray *paths = [((TWPhotosCollectionViewController *)sender).collectionView indexPathsForSelectedItems];
+            NSIndexPath *path = paths.firstObject;
+            long r = path.row;
+            NSString *s = [NSString stringWithFormat:@"%lu", r];
+            Photo *selectedPhoto = self.photos[path.row];
+            detailVC.photo = selectedPhoto;
+            
+        }
+    }
+}
 
 #pragma mark - Helper
 - (Photo *)photoFromImage:(UIImage *)image
@@ -88,7 +101,7 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     
     NSError *error = nil;
     if(![[photo managedObjectContext] save:&error]){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Erro!" delegate:nil cancelButtonTitle:@"Cacel" otherButtonTitles:nil, nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error!" delegate:nil cancelButtonTitle:@"Cacel" otherButtonTitles:nil, nil];
         [alertView show];
     }
     return photo;
@@ -113,6 +126,12 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     cell.backgroundColor = [UIColor whiteColor];
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+    [self performSegueWithIdentifier:@"photo details" sender:self];
 }
 
 #pragma mark <UICollectionViewDelegate>

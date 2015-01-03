@@ -23,14 +23,16 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self initWithCoder:aDecoder];
     if(self){
-        //[self setUp];
+        [self setUp];
     }
     return self;
 }
 
 - (void)setUp{
+    self.userInteractionEnabled = YES;
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.bounds, IMAGE_VIEW_BORDER_LENGTH, IMAGE_VIEW_BORDER_LENGTH)];
     
     [self.contentView addSubview:self.imageView];
 }
+
 @end
