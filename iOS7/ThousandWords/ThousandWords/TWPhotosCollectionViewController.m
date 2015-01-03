@@ -38,14 +38,20 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
-    id delegate  = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *moc = [delegate managedObjectContext];
-    NSError *error = nil;
+//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+//    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+//    id delegate  = [[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *moc = [delegate managedObjectContext];
+//    NSError *error = nil;
+//    
+//    NSArray *fetchedAlbums = [moc executeFetchRequest:fetchRequest error:&error];
+//    self.photos = [fetchedAlbums mutableCopy];
+//    [self.collectionView reloadData];
     
-    NSArray *fetchedAlbums = [moc executeFetchRequest:fetchRequest error:&error];
-    self.photos = [fetchedAlbums mutableCopy];
+    NSSet *unorderedPhotos = self.album.photos;
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[sortDescriptor]];
+    self.photos = [sortedPhotos mutableCopy];
     [self.collectionView reloadData];
 }
 
@@ -66,15 +72,11 @@ static NSString * const reuseIdentifier = @"Photo_Cell";
     [self presentViewController:picker animated:true completion:nil];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//#pragma mark - Navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//   
+//}
 
 #pragma mark - Helper
 - (Photo *)photoFromImage:(UIImage *)image

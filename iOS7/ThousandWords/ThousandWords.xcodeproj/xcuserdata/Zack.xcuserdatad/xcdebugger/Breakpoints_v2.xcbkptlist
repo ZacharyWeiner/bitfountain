@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThousandWords/TWAlbumTableViewController.m"
-            timestampString = "441922484.231051"
+            timestampString = "441944605.190027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "-albums"
             landmarkType = "5">
          </BreakpointContent>

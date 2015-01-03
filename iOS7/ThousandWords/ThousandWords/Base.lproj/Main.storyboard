@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="MVK-ov-GW3" kind="show" identifier="toPictures" id="DNj-If-OrF"/>
+                                    <segue destination="MVK-ov-GW3" kind="show" identifier="Album Chosen" id="DNj-If-OrF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -95,7 +95,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvk-Xh-8OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="207.75"/>
+            <point key="canvasLocation" x="1820" y="270.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y0O-9j-qmv">
