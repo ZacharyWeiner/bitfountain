@@ -11,6 +11,7 @@
 #import <FacebookSDK.h>
 #import <PFFacebookUtils.h>
 #import "MUConstants.h"
+#import "ParseCreateUsersHelper.h"
 @interface MULoginViewController ()
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSMutableData *imageData;
@@ -31,7 +32,7 @@
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
         [self updateUserInformation];
         NSLog(@"the user is already signed in ");
-        [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+        [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
         
     }
 }
@@ -39,6 +40,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)addUsersClicked:(UIButton *)sender {
+    [ParseCreateUsersHelper createUsers];
 }
 
 /*
@@ -70,7 +74,7 @@
             
         } else {
             [self updateUserInformation];
-            [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+            [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
         }
     }];
     [self.activityIndicator startAnimating]; // Show loading indicator until login is finished
@@ -101,6 +105,11 @@
             }
             if(userDictionary[@"birthday"]){
                 userProfile[kMUUserProfileBirthdayKey] = userDictionary[@"birthday"];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateStyle:NSDateFormatterShortStyle];
+                NSDate *dateFromString = [formatter dateFromString:userDictionary[@"birthday"]];
+                int age = [[NSDate date] timeIntervalSinceDate:dateFromString] / 31536000;
+                userProfile[kMUUserProfileAgeKey] = @(age);
             }
             if(userDictionary[@"interested_in"]){
                 userProfile[kMUUserProfileInterestedInKey] = userDictionary[@"interested_in"];
@@ -108,7 +117,9 @@
             if ([pictureURL absoluteString]){
                 userProfile[kMUUserProfilePictureURL] = [pictureURL absoluteString];
             }
-            
+            if(userDictionary[@"relationship_status"]){
+                userProfile[kMUUserProfileRelationshipStatusKey] = userDictionary[@"relationship_status"];
+            }
             [[PFUser currentUser] setObject:userProfile forKey:kMUUserProfileKey];
             [[PFUser currentUser] saveInBackground];
             [self requestImage];

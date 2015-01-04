@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MUSettingsViewController.h
 //  MatchedUp
 //
 //  Created by Zachary Weiner on 1/3/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface MUSettingsViewController : UIViewController
 
 @end
-
