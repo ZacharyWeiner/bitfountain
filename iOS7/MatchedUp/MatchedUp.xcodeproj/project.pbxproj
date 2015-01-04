@@ -12,6 +12,8 @@
 		1491E02B1A5884EF00A38479 /* MUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491E02A1A5884EF00A38479 /* MUSettingsViewController.m */; };
 		1491E02E1A58889400A38479 /* MUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491E02D1A58889400A38479 /* MUEditProfileViewController.m */; };
 		1491E0321A58A43A00A38479 /* ParseCreateUsersHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491E0311A58A43A00A38479 /* ParseCreateUsersHelper.m */; };
+		149B9FE91A59CD7900361CF5 /* MUMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149B9FE81A59CD7900361CF5 /* MUMatchViewController.m */; };
+		149B9FED1A59D11700361CF5 /* MUMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149B9FEC1A59D11700361CF5 /* MUMatchesViewController.m */; };
 		14E678EA1A57BFB8000AD141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E678E91A57BFB8000AD141 /* main.m */; };
 		14E678ED1A57BFB8000AD141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E678EC1A57BFB8000AD141 /* AppDelegate.m */; };
 		14E678F61A57BFB8000AD141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E678F41A57BFB8000AD141 /* Main.storyboard */; };
@@ -44,6 +46,10 @@
 		1491E02D1A58889400A38479 /* MUEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEditProfileViewController.m; sourceTree = "<group>"; };
 		1491E0301A58A43A00A38479 /* ParseCreateUsersHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseCreateUsersHelper.h; sourceTree = "<group>"; };
 		1491E0311A58A43A00A38479 /* ParseCreateUsersHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseCreateUsersHelper.m; sourceTree = "<group>"; };
+		149B9FE71A59CD7900361CF5 /* MUMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUMatchViewController.h; sourceTree = "<group>"; };
+		149B9FE81A59CD7900361CF5 /* MUMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUMatchViewController.m; sourceTree = "<group>"; };
+		149B9FEB1A59D11700361CF5 /* MUMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUMatchesViewController.h; sourceTree = "<group>"; };
+		149B9FEC1A59D11700361CF5 /* MUMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUMatchesViewController.m; sourceTree = "<group>"; };
 		14E678E41A57BFB8000AD141 /* MatchedUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchedUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E678E81A57BFB8000AD141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14E678E91A57BFB8000AD141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -122,6 +128,31 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		149B9FE61A59CC5B00361CF5 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				149B9FE71A59CD7900361CF5 /* MUMatchViewController.h */,
+				149B9FE81A59CD7900361CF5 /* MUMatchViewController.m */,
+			);
+			name = Match;
+			sourceTree = "<group>";
+		};
+		149B9FEA1A59D0F100361CF5 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				149B9FEB1A59D11700361CF5 /* MUMatchesViewController.h */,
+				149B9FEC1A59D11700361CF5 /* MUMatchesViewController.m */,
+			);
+			name = Matches;
+			sourceTree = "<group>";
+		};
+		149B9FEE1A59D15900361CF5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		14E678DB1A57BFB8000AD141 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +176,9 @@
 		14E678E61A57BFB8000AD141 /* MatchedUp */ = {
 			isa = PBXGroup;
 			children = (
+				149B9FEE1A59D15900361CF5 /* Chat */,
+				149B9FEA1A59D0F100361CF5 /* Matches */,
+				149B9FE61A59CC5B00361CF5 /* Match */,
 				1491E02F1A58A41B00A38479 /* Helpers */,
 				1491E0281A5884DE00A38479 /* Settings */,
 				1491E0241A58825700A38479 /* Home */,
@@ -356,9 +390,11 @@
 				14E679161A57C0A0000AD141 /* MULoginViewController.m in Sources */,
 				1449234A1A584CF30009D306 /* MUProfileViewController.m in Sources */,
 				14E678EA1A57BFB8000AD141 /* main.m in Sources */,
+				149B9FE91A59CD7900361CF5 /* MUMatchViewController.m in Sources */,
 				1491E02B1A5884EF00A38479 /* MUSettingsViewController.m in Sources */,
 				1491E0321A58A43A00A38479 /* ParseCreateUsersHelper.m in Sources */,
 				14E679221A57E7B1000AD141 /* MUConstants.m in Sources */,
+				149B9FED1A59D11700361CF5 /* MUMatchesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

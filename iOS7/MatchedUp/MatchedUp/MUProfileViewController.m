@@ -7,7 +7,6 @@
 //
 
 #import "MUProfileViewController.h"
-#import <Parse.h>
 #import "MUConstants.h"
 #import "ParseCreateUsersHelper.h"
 @interface MUProfileViewController ()
@@ -25,7 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFFile *pictureFile = self.photo[kMUPhotoPictureKey];
+    [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        UIImage *image = [UIImage imageWithData:data];
+        self.profilePictureImageView.image = image;
+    }];
     
+    PFUser *user = self.photo[kMUPhotoUserKey];
+    NSDictionary *profile = user[kMUUserProfileKey];
+    self.locationLabel.text = profile[kMUUserProfileLocationKey];
+    self.ageLabel.text = [NSString stringWithFormat:@"%i", [profile[kMUUserProfileAgeKey] intValue]];
+    self.statusLabel.text = profile[kMUUserProfileRelationshipStatusKey];
+    self.taglineLabel.text = user[kMUUserTagLineKey];
     
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
 @interface MUProfileViewController : UIViewController
-
+@property (strong, nonatomic) PFObject *photo;
 @end

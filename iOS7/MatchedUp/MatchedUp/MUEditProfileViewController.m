@@ -36,6 +36,7 @@
             NSLog(@"no pictures in collection");
         }
     }];
+    self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kMUUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,5 +57,8 @@
 #pragma mark - IBActions
 
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMUUserTagLineKey];
+    [[PFUser currentUser] saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
