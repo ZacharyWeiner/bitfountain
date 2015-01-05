@@ -18,11 +18,11 @@
 #define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 21
 #define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 1
 
-// JSQMessagesViewController
-#define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController
-#define COCOAPODS_VERSION_MAJOR_JSQMessagesViewController 6
-#define COCOAPODS_VERSION_MINOR_JSQMessagesViewController 1
-#define COCOAPODS_VERSION_PATCH_JSQMessagesViewController 1
+// JSMessagesViewController
+#define COCOAPODS_POD_AVAILABLE_JSMessagesViewController
+#define COCOAPODS_VERSION_MAJOR_JSMessagesViewController 3
+#define COCOAPODS_VERSION_MINOR_JSMessagesViewController 4
+#define COCOAPODS_VERSION_PATCH_JSMessagesViewController 4
 
 // JSQSystemSoundPlayer
 #define COCOAPODS_POD_AVAILABLE_JSQSystemSoundPlayer

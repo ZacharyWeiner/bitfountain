@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MUMatchesViewController : UIViewController
+@interface MUMatchesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

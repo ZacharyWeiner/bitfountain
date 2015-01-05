@@ -21,6 +21,9 @@
     // Override point for customization after application launch.
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
+    NSString *defaultPrefsFile = [[NSBundle mainBundle]pathForResource:@"DefaultPrefsFile" ofType:@"plist"];
+    NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     [Parse enableLocalDatastore];
     
     // Initialize Parse.

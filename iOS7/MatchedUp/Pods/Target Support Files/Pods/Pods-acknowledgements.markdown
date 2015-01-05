@@ -232,11 +232,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    limitations under the License.
 
 
-## JSQMessagesViewController
+## JSMessagesViewController
 
 
 MIT License
-Copyright (c) 2014 Jesse Squires
+Copyright (c) 2013 Jesse Squires
 
 http://www.hexedbits.com
 

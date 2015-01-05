@@ -19,6 +19,22 @@
 @implementation MUMatchViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.matchedUserImageView.image = self.matchedUserImage;
+    PFQuery *query = [PFQuery queryWithClassName:kMUPhotoClassKey];
+    [query whereKey:kMUPhotoUserKey equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(error){
+            NSLog(@"error getting photo for current user. error: %@", error);
+            return;
+        }
+        if(objects.count > 0){
+            PFObject *photo = objects[0];
+            PFFile *photoFile = photo[kMUPhotoPictureKey];
+            [photoFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                self.currentUserImageView.image = [UIImage imageWithData:data];
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,10 +52,10 @@
  }
  */
 - (IBAction)chatNowButtonPressed:(UIButton *)sender {
-    
+    [self.delegate presentMatchesViewController];
 }
 
 - (IBAction)keepBrowsingButtonPressed:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

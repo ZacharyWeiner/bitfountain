@@ -284,7 +284,7 @@
                         <outlet property="settingsBarButtonItem" destination="ImN-hs-JHc" id="Ive-wh-rqK"/>
                         <outlet property="taglineLabel" destination="CAq-Lz-ohk" id="fYH-Rc-d95"/>
                         <segue destination="CcI-q6-4Xa" kind="show" identifier="homeToProfileSegue" id="G9l-v8-jbc"/>
-                        <segue destination="JEB-2a-ZYD" kind="presentation" identifier="homeToMatch" id="WHI-Kh-H3v"/>
+                        <segue destination="JEB-2a-ZYD" kind="presentation" identifier="homeToMatchSegue" id="WHI-Kh-H3v"/>
                         <segue destination="yVq-y6-gxe" kind="show" identifier="homeToMatchesSegue" id="EML-9O-lLq"/>
                     </connections>
                 </viewController>
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtN-Nu-cs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="677.25"/>
+            <point key="canvasLocation" x="534" y="723.75"/>
         </scene>
         <!--Matches View Controller-->
         <scene sceneID="2Tf-cV-qoc">
@@ -388,6 +388,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5jm-1H-g10"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ajM-71-Ule">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6rJ-Sl-Afc">
@@ -422,47 +423,64 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6rJ-Sl-Afc" secondAttribute="trailing" id="B4X-ET-qyt"/>
+                            <constraint firstItem="6rJ-Sl-Afc" firstAttribute="bottom" secondItem="5jm-1H-g10" secondAttribute="top" id="Es0-yn-yn1"/>
+                            <constraint firstItem="6rJ-Sl-Afc" firstAttribute="top" secondItem="iOO-nw-qtl" secondAttribute="bottom" constant="1" id="RKe-xS-sSH"/>
+                            <constraint firstItem="6rJ-Sl-Afc" firstAttribute="leading" secondItem="ajM-71-Ule" secondAttribute="leading" id="z9E-tB-RV9"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6rJ-Sl-Afc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="B4X-ET-qyt"/>
+                                <exclude reference="Es0-yn-yn1"/>
+                                <exclude reference="RKe-xS-sSH"/>
+                                <exclude reference="z9E-tB-RV9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="6rJ-Sl-Afc"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="B4X-ET-qyt"/>
+                                <include reference="Es0-yn-yn1"/>
+                                <include reference="RKe-xS-sSH"/>
+                                <include reference="z9E-tB-RV9"/>
+                            </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="6rJ-Sl-Afc" id="HVh-hy-oIx"/>
+                        <segue destination="w0o-ub-fnP" kind="show" identifier="matchesToChatSegue" id="dmw-oo-gSj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17H-B4-cAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195" y="677.25"/>
+            <point key="canvasLocation" x="1264" y="684"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="fs4-Yp-yoK">
             <objects>
-                <viewController id="w0o-ub-fnP" sceneMemberID="viewController">
+                <viewController id="w0o-ub-fnP" customClass="MUChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="30f-c2-KnA"/>
                         <viewControllerLayoutGuide type="bottom" id="32i-UB-iNu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5cV-Cr-lkp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOF-KV-QHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="677.25"/>
+            <point key="canvasLocation" x="1930" y="684"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="hVa-Oj-KgE">

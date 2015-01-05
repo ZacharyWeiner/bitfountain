@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MUHomeViewController : UIViewController
-
+#import "MUMatchViewController.h"
+@interface MUHomeViewController : UIViewController <MUMatchViewControllerDelegate>
+-(void)presentMatchesViewController;
 @end
